@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-200 text-slate-900;
+    font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .input-class {
+    @apply w-full rounded-md border border-slate-300 bg-slate-50 p-2 text-slate-900 transition-all duration-200;
+    font-size: 16px;
+  }
+  .input-class:focus {
+    @apply bg-white border-[#002147] outline-none ring-1 ring-[#002147];
+  }
+  .label-class {
+    @apply block mb-1 text-sm font-semibold text-slate-800;
+  }
+  .sub-text {
+    @apply block mb-2 text-xs italic text-slate-500;
+  }
+  .section-title {
+    @apply mb-4 pb-2 border-b-2 border-[#b59410] text-lg font-bold uppercase text-[#002147];
+  }
+  .sub-section-title {
+    @apply mt-6 mb-1 text-base font-semibold text-slate-800;
+  }
+  .radio-btn {
+    @apply h-4 w-4 cursor-pointer accent-[#002147];
+  }
+  .nprs-container {
+    @apply flex flex-1 max-w-[350px] justify-between;
+  }
+  .nprs-item {
+    @apply flex flex-col items-center mx-0.5 cursor-pointer;
+  }
+  .nprs-item span {
+    @apply mb-1 text-[10px] text-slate-500;
+  }
+}
+
+/* Reglas de Impresión Personalizadas para Chrome & Safari */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: letter;
+  }
+  
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Forzar visibilidad de fondos de color en PDF */
+  .bg-slate-50 {
+    background-color: #f8fafc !important;
+  }
+  
+  .bg-slate-100 {
+    background-color: #f1f5f9 !important;
+  }
+
+  .border-[#b59410], .border-b-2 {
+    border-color: #b59410 !important;
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Quiro Salud CDMX - Historial Clínico",
+  "description": "Aplicación de historial clínico inicial para Quiro Salud CDMX con formato SOAP.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
